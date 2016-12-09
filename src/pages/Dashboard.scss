@@ -3,11 +3,20 @@
   padding: 90px 90px 45px 90px;
   background: linear-gradient(141deg, #cb2d3e 0%, #ef473a 100%);
 
+  button-logout {
+    color: white;
+    width: 70px;
+    border: 0px;
+    cursor: pointer;
+    outline: 0px;
+  }
+
   h2 {
     color: white;
     font-size: 36px;
     margin-bottom: 50px;
   }
+  
 }
 
 .dashboard__list {

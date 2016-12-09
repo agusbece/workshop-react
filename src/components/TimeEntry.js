@@ -1,15 +1,26 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import Octicon from 'react-octicon';
+import { deleteTimeEntry } from '../store/actions';
 import './TimeEntry.scss';
 
 class TimeEntry extends Component {
+  constructor (props) {
+    super(props);
+
+    this.deleteEntry = ::this.deleteEntry;
+  }
+
   renderDate (dateString) {
     const date = new Date(dateString);
     return date.getHours() + ':' + date.getMinutes();
   }
 
+  deleteEntry () {
+    this.props.deleteTimeEntry(this.props.id);  }
+
   render () {
-    const {title, timeStart, timeEnd} = this.props;
+    const {id, title, timeStart, timeEnd} = this.props;
 
     return (
       <li className='time-entry'>
@@ -22,15 +33,25 @@ class TimeEntry extends Component {
           { timeEnd ? this.renderDate(timeEnd) : '-:-' }
         </div>
         <Octicon name='x' />
+        
+        <div className='delete-entry'>
+          <button onClick={this.deleteEntry}>Delete</button>
+        </div>
+
       </li>
     );
   }
 };
 
 TimeEntry.propTypes = {
+  id: React.PropTypes.number,
   title: React.PropTypes.string,
   timeStart: React.PropTypes.string,
   timeEnd: React.PropTypes.string
 };
 
-export default TimeEntry;
+const mapActionCreators = { deleteTimeEntry };
+
+export default connect(null, mapActionCreators)(TimeEntry);
+
+//export default TimeEntry;
