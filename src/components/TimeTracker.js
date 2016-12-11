@@ -27,6 +27,8 @@ class TimeTracker extends Component {
 
     this.props.startTracking(this.trackInput.value, moment().format());
 
+    console.log(moment().format());
+    
     this.timerInterval = setInterval(() => {
       this.setState((prevState) => ({ timer: prevState.timer + 1 }));
     }, 1000);
@@ -50,6 +52,7 @@ class TimeTracker extends Component {
         <input type='text' ref={(input) => { this.trackInput = input; }} />
         <div>{secToMin(timer)}</div>
         <button onClick={this.toggleTimer}>{buttonText}</button>
+        
       </div>
     );
   }
@@ -57,7 +60,7 @@ class TimeTracker extends Component {
 
 TimeTracker.propTypes = {
   startTracking: React.PropTypes.func.isRequired,
-  stopTracking: React.PropTypes.func.isRequired
+  stopTracking: React.PropTypes.func.isRequired 
 };
 
 const mapActionCreators = { startTracking, stopTracking };

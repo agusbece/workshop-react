@@ -3,12 +3,15 @@ import { connect } from 'react-redux';
 import Octicon from 'react-octicon';
 import './Layout.scss';
 
+
 const Layout = ({user, children}) => (
   <main>
     <header>
       <Octicon name='clock' mega spin />
       <h1>Foogl</h1>
+
       {user && <span>Hi {user.email}!</span>}
+
     </header>
 
     {children}
