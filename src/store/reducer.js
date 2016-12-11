@@ -5,6 +5,14 @@ const ACTION_HANDLERS = {
   [actions.SIGN_IN_SUCCESS]: (state, action) => {
     return { ...state, user: action.data.user };
   },
+  [actions.LOGOUT_SUCCESS]: (state, action) => {
+    return { 
+      ...state, 
+      user: null,
+      tracks: [],
+      currentTrack: null
+    };
+  },
   [actions.GET_TIME_ENTRIES_SUCCESS]: (state, action) => {
     return { ...state, tracks: action.data.time_entries };
   },
@@ -16,6 +24,12 @@ const ACTION_HANDLERS = {
       ...state,
       tracks: state.tracks.concat([action.data.time_entry]),
       currentTrack: null
+    };
+  },
+  [actions.DELETE_TIME_ENTRY_SUCCESS]: (state, action) => {
+    return {
+      ...state,
+      tracks: state.tracks.filter(track => track.id !== action.id)
     };
   }
 };

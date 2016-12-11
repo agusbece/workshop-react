@@ -41,6 +41,16 @@
     align-items: center;
     margin-left: 20px;
   }
+  
+  button {
+    color: white;
+    width: 140px;
+    font-size: 25px;
+    background: #34D2C1;
+    border: 2px;
+    cursor: pointer;
+    outline: 0px;
+  }
 
   &:last-child {
     border-bottom: 0px;
