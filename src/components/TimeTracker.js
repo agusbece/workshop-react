@@ -27,8 +27,6 @@ class TimeTracker extends Component {
 
     this.props.startTracking(this.trackInput.value, moment().format());
 
-    console.log(moment().format());
-    
     this.timerInterval = setInterval(() => {
       this.setState((prevState) => ({ timer: prevState.timer + 1 }));
     }, 1000);

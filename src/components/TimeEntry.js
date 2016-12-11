@@ -17,8 +17,7 @@ class TimeEntry extends Component {
   }
 
   deleteEntry () {
-    this.props.deleteTimeEntry(this.props.id);  
-  }
+    this.props.deleteTimeEntry(this.props.id);  }
 
   render () {
     const {id, title, timeStart, timeEnd} = this.props;
@@ -33,9 +32,11 @@ class TimeEntry extends Component {
         <div className='time-entry__end'>
           { timeEnd ? this.renderDate(timeEnd) : '-:-' }
         </div>
-        <Octicon name='x' />      
+        <Octicon name='x' />
         
-        <button className='delete-entry' onClick={this.deleteEntry}>Delete</button>       
+        <div className='delete-entry'>
+          <button onClick={this.deleteEntry}>Delete</button>
+        </div>
 
       </li>
     );
@@ -52,3 +53,5 @@ TimeEntry.propTypes = {
 const mapActionCreators = { deleteTimeEntry };
 
 export default connect(null, mapActionCreators)(TimeEntry);
+
+//export default TimeEntry;
