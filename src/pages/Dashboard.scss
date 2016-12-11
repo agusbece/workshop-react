@@ -3,9 +3,10 @@
   padding: 90px 90px 45px 90px;
   background: linear-gradient(141deg, #cb2d3e 0%, #ef473a 100%);
 
-  button-logout {
-    color: white;
-    width: 70px;
+  .button-logout {
+    color: black;
+    width: 80px;
+    height: 20px;
     border: 0px;
     cursor: pointer;
     outline: 0px;
@@ -17,7 +18,35 @@
     margin-bottom: 50px;
   }
   
+  .add_entry {
+    color: white;
+    width: 140px;
+    height: 50px;
+    font-size: 21px;
+    background: #34D2C1;
+    border: 1px;
+    cursor: pointer;
+    outline: 0px;
+    padding: 2px;
+  }
 }
+
+.wrapper {
+ width:500px;
+ overflow:hidden;
+}
+
+.left {
+ width:250px;
+ float:left;
+}
+
+.right {
+ width:250px;
+ float:right;
+}
+
+
 
 .dashboard__list {
   padding: 30px 90px;
@@ -35,3 +64,4 @@
   color: gray;
   font: 90%;
 }
+

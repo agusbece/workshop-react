@@ -5,7 +5,7 @@ const ACTION_HANDLERS = {
   [actions.SIGN_IN_SUCCESS]: (state, action) => {
     return { ...state, user: action.data.user };
   },
-  [actions.LOGOUT_SUCCESS]: (state, action) => {
+  [actions.LOGOUT]: (state, action) => {
     return { 
       ...state, 
       user: null,
@@ -30,6 +30,12 @@ const ACTION_HANDLERS = {
     return {
       ...state,
       tracks: state.tracks.filter(track => track.id !== action.id)
+    };
+  },
+  [actions.NEW_TRACKING_SUCCESS]: (state, action) => {
+    return {
+      ...state,
+      tracks: state.tracks.concat([action.data.time_entry])
     };
   }
 };
