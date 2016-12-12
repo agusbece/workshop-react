@@ -1,7 +1,7 @@
 .time-entry {
   display: flex;
   height: 50px;
-  padding: 0px 20px;
+  padding-left: 20px;
   border-bottom: 1px solid #dadada;
 
   .octicon-triangle-right {
@@ -44,9 +44,11 @@
   
   button {
     color: white;
-    width: 140px;
+    width: 120px;
     font-size: 25px;
+    align-items: center;
     background: #34D2C1;
+    padding-left: 10px;
     border: 2px;
     cursor: pointer;
     outline: 0px;
