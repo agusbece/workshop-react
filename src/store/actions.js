@@ -14,6 +14,8 @@ export const DELETE_TIME_ENTRY_SUCCESS = 'DELETE_TIME_ENTRY_SUCCESS';
 export const DELETE_TIME_ENTRY_FAILURE = 'DELETE_TIME_ENTRY_FAILURE';
 export const NEW_TRACKING_SUCCESS = 'NEW_TRACKING_SUCCESS';
 export const NEW_TRACKING_FAILURE = 'NEW_TRACKING_FAILURE';  
+export const EDIT_TRACKING_SUCCESS = 'EDIT_TRACKING_SUCCESS'; 
+export const EDIT_TRACKING_FAILURE = 'EDIT_TRACKING_FAILURE'; 
 
 // Action creators
 export const signUp = (email) => {
@@ -84,6 +86,25 @@ export const stopTracking = (title, timeEnd) => {
   };
 };
 
+export const editTracking = (id, title, timeStart, timeEnd) => {
+  return (dispatch, getState) => {
+    fetch(API_URL + '/time_entries/' + id, {
+      method: 'PATCH',
+      body: JSON.stringify({
+        title: title,
+        user_id: getState().user.id,
+        time_start: timeStart,
+        time_end: timeEnd
+      })
+    })
+    .then(data => data.json())
+    .then(
+      data => dispatch({ type: EDIT_TRACKING_SUCCESS, data }),
+      err => dispatch({ type: EDIT_TRACKING_FAILURE, err })
+    );
+  };
+};
+
 export const deleteTimeEntry = (id) => {
   return (dispatch, getState) => {
     fetch(API_URL + '/time_entries/' + id, {
@@ -129,5 +150,7 @@ export default {
   DELETE_TIME_ENTRY_SUCCESS,
   DELETE_TIME_ENTRY_FAILURE,
   NEW_TRACKING_SUCCESS,
-  NEW_TRACKING_FAILURE
+  NEW_TRACKING_FAILURE,
+  EDIT_TRACKING_SUCCESS,
+  EDIT_TRACKING_FAILURE
 };

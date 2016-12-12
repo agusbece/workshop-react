@@ -28,32 +28,16 @@
     cursor: pointer;
     outline: 0px;
     padding: 2px;
+    margin: 20px;
   }
 }
-
-.wrapper {
- width:500px;
- overflow:hidden;
-}
-
-.left {
- width:250px;
- float:left;
-}
-
-.right {
- width:250px;
- float:right;
-}
-
-
 
 .dashboard__list {
   padding: 30px 90px;
 
   ul {
     list-style: none;
-    margin: 20px 0px;
+    margin-bottom: 20px ;
     border: 1px solid #dadada;
   }
 }

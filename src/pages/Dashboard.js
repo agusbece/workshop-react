@@ -22,7 +22,7 @@ class Dashboard extends Component {
     super(props);
 
     this.state = {
-      open: false,
+      modalIsOpen: false,
       trackStartTime: '',
       trackEndTime: '',
       trackTitle: ''
@@ -45,10 +45,6 @@ class Dashboard extends Component {
   }
 
   // modal add track
-  getInitialState () {
-    return { modalIsOpen: false };
-  }
-
   openModal () {
     this.setState({modalIsOpen: true});
   }
@@ -94,7 +90,8 @@ class Dashboard extends Component {
         id={track.id}
         title={track.title}
         timeStart={track.time_start}
-        timeEnd={track.time_end} />
+        timeEnd={track.time_end}
+        tracks={this.props.tracks} />
     ));
 
     return (
@@ -104,10 +101,10 @@ class Dashboard extends Component {
             <button className='button-logout' onClick={this.props.logOut} >Logout</button>  
           </div>
           <h2>Start tracking!</h2>
+          <TimeTracker />
           <div>
             <button className='add_entry' onClick={this.openModal}>Custom track</button>            
           </div>
-          <TimeTracker />
         </div>        
         <div className='dashboard__list'>
           <h3>My tracks</h3>
