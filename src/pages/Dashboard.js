@@ -50,22 +50,23 @@ class Dashboard extends Component {
   }
 
   closeModal () {
-    this.setState({modalIsOpen: false});
-    this.setState({trackStartTime: ''});
-    this.setState({trackEndTime: ''});
-    this.setState({trackTitle: ''});
+    this.setState({
+      modalIsOpen: false,
+      trackStartTime: '',
+      trackEndTime: '',
+      trackTitle: ''});
   }
 
   addEntry () {
-    //console.log(this.state.trackStartTime); 
     if ((this.state.trackStartTime != '') && (this.state.trackEndTime != '') 
           && (this.state.trackTitle != '')){
-      this.setState({modalIsOpen: false}); 
+      this.setState({
+        modalIsOpen: false,
+        trackStartTime: '',
+        trackEndTime: '',
+        trackTitle: ''});
       this.props.createCustomTrack( this.state.trackTitle, 
-        this.state.trackStartTime + '-03:00', this.state.trackEndTime + '-03:00');            
-      this.setState({trackStartTime: ''});
-      this.setState({trackEndTime: ''});
-      this.setState({trackTitle: ''});
+        this.state.trackStartTime + '-03:00', this.state.trackEndTime + '-03:00')
     } 
   }
 
@@ -75,12 +76,10 @@ class Dashboard extends Component {
 
   handleChangeStartInput (event) {
     this.setState({trackStartTime: event.target.value});
-    console.log(this.state.trackStartTime); 
   }
 
   handleChangeEndInput (event) {
     this.setState({trackEndTime: event.target.value});
-    console.log(this.state.trackEndTime); 
   }
 
   render () {

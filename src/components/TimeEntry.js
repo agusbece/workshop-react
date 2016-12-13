@@ -96,10 +96,11 @@ class TimeEntry extends Component {
   }
 
   closeModal () {
-    this.setState({modalIsOpen: false});
-    this.setState({trackStartTime: this.renderDateForModal(this.props.timeStart)});
-    this.setState({trackEndTime: this.renderDateForModal(this.props.timeEnd)});
-    this.setState({trackTitle: this.props.title});
+    this.setState({
+      modalIsOpen: false,
+      trackStartTime: this.renderDateForModal(this.props.timeStart),
+      trackEndTime: this.renderDateForModal(this.props.timeEnd),
+      trackTitle: this.props.title});
   }
 
   editEntry () {
@@ -108,10 +109,7 @@ class TimeEntry extends Component {
       this.setState({modalIsOpen: false}); 
       this.props.editTracking(this.props.id, this.state.trackTitle, 
                                 this.state.trackStartTime + '-03:00', 
-                                this.state.trackEndTime + '-03:00');            
-      //this.setState({trackStartTime: this.renderDateForModal(this.props.timeStart)});
-      //this.setState({trackEndTime: this.renderDateForModal(this.props.timeEnd)});
-      //this.setState({trackTitle: this.props.title});     
+                                this.state.trackEndTime + '-03:00');    
     } 
   }
 
@@ -180,7 +178,6 @@ class TimeEntry extends Component {
 };
 
 TimeEntry.propTypes = {
-  tracks: React.PropTypes.array.isRequired,
   id: React.PropTypes.number,
   title: React.PropTypes.string,
   timeStart: React.PropTypes.string,
