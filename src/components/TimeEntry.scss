@@ -1,7 +1,11 @@
 .time-entry {
   display: flex;
   height: 50px;
+<<<<<<< HEAD
   padding: 0px 20px;
+=======
+  padding-left: 20px;
+>>>>>>> my-work
   border-bottom: 1px solid #dadada;
 
   .octicon-triangle-right {
@@ -41,6 +45,21 @@
     align-items: center;
     margin-left: 20px;
   }
+<<<<<<< HEAD
+=======
+  
+  button {
+    color: white;
+    width: 120px;
+    font-size: 25px;
+    align-items: center;
+    background: #34D2C1;
+    padding-left: 10px;
+    border: 2px;
+    cursor: pointer;
+    outline: 0px;
+  }
+>>>>>>> my-work
 
   &:last-child {
     border-bottom: 0px;
