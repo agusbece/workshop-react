@@ -35,21 +35,13 @@
   },
   "dependencies": {
     "classnames": "^2.2.5",
-<<<<<<< HEAD
-    "is-email": "^1.0.0",
-    "moment": "^2.17.0",
-=======
     "input-moment": "^0.3.0",
     "is-email": "^1.0.0",
     "moment": "^2.17.1",
->>>>>>> my-work
     "react": "^15.3.2",
     "react-datetime": "^2.7.5",
     "react-dom": "^15.3.2",
-<<<<<<< HEAD
-=======
     "react-modal": "^1.6.1",
->>>>>>> my-work
     "react-octicon": "^2.0.0",
     "react-redux": "^4.4.6",
     "react-router": "^3.0.0",

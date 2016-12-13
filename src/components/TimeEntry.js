@@ -1,17 +1,4 @@
 import React, { Component } from 'react';
-<<<<<<< HEAD
-import Octicon from 'react-octicon';
-import './TimeEntry.scss';
-
-class TimeEntry extends Component {
-  renderDate (dateString) {
-    const date = new Date(dateString);
-    return date.getHours() + ':' + date.getMinutes();
-  }
-
-  render () {
-    const {title, timeStart, timeEnd} = this.props;
-=======
 import { connect } from 'react-redux';
 import Octicon from 'react-octicon';
 import { deleteTimeEntry, editTracking } from '../store/actions';
@@ -142,7 +129,6 @@ class TimeEntry extends Component {
 
   render () {
     const {id, title, timeStart, timeEnd} = this.props;
->>>>>>> my-work
 
     return (
       <li className='time-entry'>
@@ -154,10 +140,6 @@ class TimeEntry extends Component {
         <div className='time-entry__end'>
           { timeEnd ? this.renderDate(timeEnd) : '-:-' }
         </div>
-<<<<<<< HEAD
-        <Octicon name='x' />
-      </li>
-=======
         <button className='modify-entry' onClick={this.openModal}>Edit</button>
         <button className='delete-entry' onClick={this.deleteEntry}>Delete</button>
 
@@ -191,25 +173,17 @@ class TimeEntry extends Component {
       </li>
 
 
->>>>>>> my-work
     );
   }
 };
 
 TimeEntry.propTypes = {
-<<<<<<< HEAD
-=======
   id: React.PropTypes.number,
->>>>>>> my-work
   title: React.PropTypes.string,
   timeStart: React.PropTypes.string,
   timeEnd: React.PropTypes.string
 };
 
-<<<<<<< HEAD
-export default TimeEntry;
-=======
 const mapActionCreators = { deleteTimeEntry, editTracking };
 
 export default connect(null, mapActionCreators)(TimeEntry);
->>>>>>> my-work

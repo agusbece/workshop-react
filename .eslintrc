@@ -1,26 +1,9 @@
 {
-<<<<<<< HEAD
-  "parser"  : "babel-eslint",
-  "extends" : [
-    "standard",
-    "standard-react"
-  ],
-  "plugins": [
-    "babel"
-  ],
-  "env"     : {
-    "es6" : true,
-    "browser" : true
-  },
-  "globals" : {
-    "API_URL": false
-=======
   "extends": "eslint:recommended",
   "plugins": ["react"],
   "ecmaFeatures": {
     "modules": true,
     "jsx": true
->>>>>>> my-work
   },
   "rules": {
     "no-alert": 2,

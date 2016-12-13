@@ -3,25 +3,19 @@ import { browserHistory } from 'react-router';
 // Constants
 export const SIGN_IN_SUCCESS = 'SIGN_IN_SUCCESS';
 export const SIGN_IN_FAILURE = 'SIGN_IN_FAILURE';
-<<<<<<< HEAD
-=======
 export const LOGOUT = 'LOGOUT';
->>>>>>> my-work
 export const GET_TIME_ENTRIES_SUCCESS = 'GET_TIME_ENTRIES_SUCCESS';
 export const GET_TIME_ENTRIES_FAILURE = 'GET_TIME_ENTRIES_FAILURE';
 export const START_TRACKING_SUCCESS = 'START_TRACKING_SUCCESS';
 export const START_TRACKING_FAILURE = 'START_TRACKING_FAILURE';
 export const STOP_TRACKING_SUCCESS = 'STOP_TRACKING_SUCCESS';
 export const STOP_TRACKING_FAILURE = 'STOP_TRACKING_FAILURE';
-<<<<<<< HEAD
-=======
 export const DELETE_TIME_ENTRY_SUCCESS = 'DELETE_TIME_ENTRY_SUCCESS';
 export const DELETE_TIME_ENTRY_FAILURE = 'DELETE_TIME_ENTRY_FAILURE';
 export const NEW_TRACKING_SUCCESS = 'NEW_TRACKING_SUCCESS';
 export const NEW_TRACKING_FAILURE = 'NEW_TRACKING_FAILURE';  
 export const EDIT_TRACKING_SUCCESS = 'EDIT_TRACKING_SUCCESS'; 
 export const EDIT_TRACKING_FAILURE = 'EDIT_TRACKING_FAILURE'; 
->>>>>>> my-work
 
 // Action creators
 export const signUp = (email) => {
@@ -40,14 +34,11 @@ export const signUp = (email) => {
   }
 }
 
-<<<<<<< HEAD
-=======
 export const logOut = () => {
   browserHistory.push('/login');
   return { type: LOGOUT }
 }
 
->>>>>>> my-work
 export const getTimeEntries = () => {
   return (dispatch, getState) => {
     fetch(API_URL + '/time_entries?user_id=' + getState().user.id)
@@ -95,11 +86,6 @@ export const stopTracking = (title, timeEnd) => {
   };
 };
 
-<<<<<<< HEAD
-export default {
-  SIGN_IN_SUCCESS,
-  SIGN_IN_FAILURE,
-=======
 export const editTracking = (id, title, timeStart, timeEnd) => {
   return (dispatch, getState) => {
     fetch(API_URL + '/time_entries/' + id, {
@@ -155,15 +141,11 @@ export default {
   SIGN_IN_SUCCESS,
   SIGN_IN_FAILURE,
   LOGOUT,
->>>>>>> my-work
   GET_TIME_ENTRIES_SUCCESS,
   GET_TIME_ENTRIES_FAILURE,
   START_TRACKING_SUCCESS,
   START_TRACKING_FAILURE,
   STOP_TRACKING_SUCCESS,
-<<<<<<< HEAD
-  STOP_TRACKING_FAILURE
-=======
   STOP_TRACKING_FAILURE,
   DELETE_TIME_ENTRY_SUCCESS,
   DELETE_TIME_ENTRY_FAILURE,
@@ -171,5 +153,4 @@ export default {
   NEW_TRACKING_FAILURE,
   EDIT_TRACKING_SUCCESS,
   EDIT_TRACKING_FAILURE
->>>>>>> my-work
 };

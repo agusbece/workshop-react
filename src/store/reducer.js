@@ -5,8 +5,6 @@ const ACTION_HANDLERS = {
   [actions.SIGN_IN_SUCCESS]: (state, action) => {
     return { ...state, user: action.data.user };
   },
-<<<<<<< HEAD
-=======
   [actions.LOGOUT]: (state, action) => {
     return { 
       ...state, 
@@ -15,7 +13,6 @@ const ACTION_HANDLERS = {
       currentTrack: null
     };
   },
->>>>>>> my-work
   [actions.GET_TIME_ENTRIES_SUCCESS]: (state, action) => {
     return { ...state, tracks: action.data.time_entries };
   },
@@ -28,11 +25,6 @@ const ACTION_HANDLERS = {
       tracks: state.tracks.concat([action.data.time_entry]),
       currentTrack: null
     };
-<<<<<<< HEAD
-  }
-};
-
-=======
   },
   [actions.DELETE_TIME_ENTRY_SUCCESS]: (state, action) => {
     return {
@@ -69,7 +61,6 @@ const ACTION_HANDLERS = {
 };
 
 
->>>>>>> my-work
 // Reducer
 export const initialState = {
   user: null,

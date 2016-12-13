@@ -2,12 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import TimeTracker from '../components/TimeTracker';
 import TimeEntry from '../components/TimeEntry';
-<<<<<<< HEAD
-import { getTimeEntries } from '../store/actions';
-import './Dashboard.scss';
-
-class Dashboard extends Component {
-=======
 import { getTimeEntries, logOut, createCustomTrack } from '../store/actions';
 import './Dashboard.scss';
 import Modal from 'react-modal';
@@ -42,7 +36,6 @@ class Dashboard extends Component {
     this.handleChangeTitleInput = ::this.handleChangeTitleInput;
   }
 
->>>>>>> my-work
   componentWillMount () {
     this.props.getTimeEntries();
   }
@@ -51,8 +44,6 @@ class Dashboard extends Component {
     return <li className='dashboard-list-zero-state'>You dont have any tracks.</li>;
   }
 
-<<<<<<< HEAD
-=======
   // modal add track
   openModal () {
     this.setState({modalIsOpen: true});
@@ -91,33 +82,20 @@ class Dashboard extends Component {
     this.setState({trackEndTime: event.target.value});
   }
 
->>>>>>> my-work
   render () {
     const tracks = this.props.tracks.map((track) => (
       <TimeEntry
         key={track.id}
-<<<<<<< HEAD
-        title={track.title}
-        timeStart={track.time_start}
-        timeEnd={track.time_end} />
-=======
         id={track.id}
         title={track.title}
         timeStart={track.time_start}
         timeEnd={track.time_end}
         tracks={this.props.tracks} />
->>>>>>> my-work
     ));
 
     return (
       <section className='dashboard'>
         <div className='dashboard__hero'>
-<<<<<<< HEAD
-          <h2>Start tracking!</h2>
-          <TimeTracker />
-        </div>
-
-=======
           <div>     
             <button className='button-logout' onClick={this.props.logOut} >Logout</button>  
           </div>
@@ -127,15 +105,12 @@ class Dashboard extends Component {
             <button className='add_entry' onClick={this.openModal}>Custom track</button>            
           </div>
         </div>        
->>>>>>> my-work
         <div className='dashboard__list'>
           <h3>My tracks</h3>
           <ul>
             { tracks.length > 0 ? tracks : this.renderEmptyMessage() }
           </ul>
         </div>
-<<<<<<< HEAD
-=======
 
         <Modal
           isOpen={this.state.modalIsOpen}
@@ -164,7 +139,6 @@ class Dashboard extends Component {
           </div>          
         </Modal>
 
->>>>>>> my-work
       </section>
     );
   }
@@ -172,13 +146,6 @@ class Dashboard extends Component {
 
 Dashboard.propTypes = {
   tracks: React.PropTypes.array.isRequired,
-<<<<<<< HEAD
-  getTimeEntries: React.PropTypes.func.isRequired
-};
-
-const mapStateToProps = (state) => ({ tracks: state.tracks });
-const mapActionCreators = { getTimeEntries };
-=======
   getTimeEntries: React.PropTypes.func.isRequired,
   createCustomTrack: React.PropTypes.func.isRequired,
   logOut: React.PropTypes.func.isRequired
@@ -186,6 +153,5 @@ const mapActionCreators = { getTimeEntries };
 
 const mapStateToProps = (state) => ({ tracks: state.tracks });
 const mapActionCreators = { getTimeEntries, logOut, createCustomTrack };
->>>>>>> my-work
 
 export default connect(mapStateToProps, mapActionCreators)(Dashboard);
